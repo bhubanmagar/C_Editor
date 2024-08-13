@@ -1,0 +1,37 @@
+<div class="flex justify-center items-center h-screen w-full">
+  <form
+    class="flex flex-col justify-center items-center bg-slate-400 p-3 rounded-2xl"
+    [formGroup]="binForm"
+  >
+    <p class="font-bold twxt-2xl">Login</p>
+
+    <div class="flex flex-col p-2 m-2">
+      <p class="p-1 text-red-600" [hidden]="title.untouched || title.invalid">
+        title is required!
+      </p>
+      <input
+        type="title"
+        class="p-2 border rounded-xl m-2"
+        placeholder="title...."
+        [formControl]="title"
+      />
+      <p class="p-1 text-red-600" [hidden]="code.untouched || code.invalid">
+        code is required!
+      </p>
+      <textarea
+        type="code"
+        rows="9"
+        cols="40"
+        class="p-2 border rounded-xl m-2 bg-slate-800 text-white"
+        placeholder="Code snippet here...."
+        [formControl]="code"
+      ></textarea>
+    </div>
+    <button
+      class="bg-red-500 p-3 rounded-xl w-64 text-white font-bold"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </form>
+</div>
